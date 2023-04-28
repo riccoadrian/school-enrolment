@@ -24,6 +24,20 @@
     ?>
         <form method="POST" action="?action=update" enctype="multipart/form-data">
             <div class="form-group">
+            <?php
+            if (isset($student['filename'])) {
+                $filename = $student['filename'];
+                $alt = explode('.', $filename)[0];
+            ?>
+                <img src="public/uploads/<?php echo $filename; ?>" class="align-self-start mr-3 rounded-circle" alt="<?php echo $alt; ?>" width="200px" height="200px"><br />
+                <br />
+            <?php
+            }
+            ?>
+                <label for="file">Select an image file to upload (JPG, JPEG, PNG) [min size: 200px x 200px]</label>
+                <input type="file" class="form-control" id="file" name="file" />
+            </div>
+            <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" value="<?php echo (isset($student['name']) ? $student['name'] : ''); ?>" required />
             </div>

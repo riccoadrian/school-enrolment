@@ -21,6 +21,7 @@ class StudentModel
 
             $query = "INSERT INTO student (".$columns.") VALUES(".$values.")";
             $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':filename', $params['filename'], \PDO::PARAM_STR);
             $stmt->bindParam(':name', $params['name'], \PDO::PARAM_STR);
             $stmt->bindParam(':date_of_birth', $params['date_of_birth'], \PDO::PARAM_STR);
             $stmt->bindParam(':enrolment_date', $params['enrolment_date'], \PDO::PARAM_STR);
@@ -67,12 +68,26 @@ class StudentModel
 
     public function deleteStudent($id)
     {
+        $query = "SELECT filename FROM student WHERE id={$id}";
+        $student = $this->db->query($query)->fetch();
+        $dir = "uploads";
+        $filename = $student['filename'];
+        unlink($dir . '/' . $filename);
+
         $query = "DELETE FROM student WHERE id={$id}";
         $this->db->query($query);
     }
 
     public function updateStudent($params, $id)
     {
+        if (! is_null($params['filename'])) {
+            $query = "SELECT filename FROM student WHERE id={$id}";
+            $student = $this->db->query($query)->fetch();
+            $dir = "uploads";
+            $filename = $student['filename'];
+            unlink($dir . '/' . $filename);
+        }
+
         $message = [];
 
         try {
@@ -82,7 +97,9 @@ class StudentModel
                 if ($key == "year") {
                     $sets[] = $key.' = '.$val;
                 } else {
-                    $sets[] = $key." = '".$val."'";
+                    if (! is_null($val)) {
+                        $sets[] = $key." = '".$val."'";
+                    }
                 }
             }
 

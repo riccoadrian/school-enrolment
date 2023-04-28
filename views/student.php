@@ -12,6 +12,17 @@
     ?>
     <div class="container">
         <div class="media d-flex m-auto mt-4 w-75">
+        <?php
+        if (isset($student['filename'])) {
+            $filename = $student['filename'];
+            $alt = explode('.', $filename)[0];
+        ?>
+            <div class="px-5">
+                <img src="public/uploads/<?php echo $filename; ?>" class="align-self-start mr-3 rounded-circle" alt="<?php echo $alt; ?>" width="200px" height="200px">
+            </div>
+        <?php
+        }
+        ?>
             <div class="media-body ps-5">
                 <h5 class="mt-0"><span class="fw-bold">Name:</span> <?php echo ucfirst($student['name']); ?></h5>
                 <h5><span class="fw-bold">Date of Birth:</span> <?php echo $student['date_of_birth']; ?></h5>
