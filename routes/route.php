@@ -26,4 +26,12 @@ if (isset($_GET['action'])) {
     if ($request == 'delete') {
         $route = "StudentController@deleteStudentAction";
     }
+
+    if ($request == 'editStudent') {
+        $route = "StudentController@updateStudentAction";
+    }
+
+    if ($request == 'update') {
+        $route = "StudentController@updateStudentAction";
+    }
 }

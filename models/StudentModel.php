@@ -70,4 +70,38 @@ class StudentModel
         $query = "DELETE FROM student WHERE id={$id}";
         $this->db->query($query);
     }
+
+    public function updateStudent($params, $id)
+    {
+        $message = [];
+
+        try {
+            $sets = [];
+
+            foreach ($params as $key => $val) {
+                if ($key == "year") {
+                    $sets[] = $key.' = '.$val;
+                } else {
+                    $sets[] = $key." = '".$val."'";
+                }
+            }
+
+            $sets = implode(', ', $sets);
+
+            $query = "UPDATE student SET ".$sets." WHERE id={$id}";
+            $stmt = $this->db->query($query);
+
+            $message = [
+                'type'    => 'alert-success',
+                'message' => 'Student updated successfully!'
+            ];
+        } catch(Exception $e) {
+            $message = [
+                'type'    => 'alert-danger',
+                'message' => 'Error: '.$e->getMessage()
+            ];
+        }
+
+        return $message;
+    }
 }
