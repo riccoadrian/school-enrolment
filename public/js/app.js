@@ -85,3 +85,244 @@ function deleteStudent(id, first_name) {
         });
     };
 }
+
+function validateForm() {
+    var classname = 'fs-5 text-danger mt-2';
+
+    var element = document.getElementById('first_name');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the first name.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+
+    var element = document.getElementById('last_name');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the last name.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+
+    var element = document.getElementById('date_of_birth');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the date of birth.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+
+    var element = document.getElementById('enrolment_date');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the enrolment date.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+
+    var element = document.getElementById('phone');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the phone number.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+
+    var element = document.getElementById('mobile');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the mobile number.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+
+    var element = document.getElementById('email');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the email address.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+
+        let emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (! element.value.match(emailFormat)) {
+            let text = 'Please enter a valid email address.';
+            let div = createDivErrorElement(classname, text);
+
+            if (divContainer.querySelector('#div-error') === null) {
+                element.classList.add('bg-danger');
+                divContainer.append(div);
+            }
+        } else {
+            element.classList.remove('bg-danger');
+
+            if (divContainer.querySelector('#div-error') !== null) {
+                divContainer.querySelector('#div-error').remove();
+            }
+        }
+    }
+
+    var element = document.getElementById('first_contact_name');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the first contact name.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+
+    var element = document.getElementById('first_contact_phone');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the first contact phone.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+
+    var element = document.getElementById('second_contact_name');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the second contact name.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+
+    var element = document.getElementById('second_contact_phone');
+    var divContainer = element.closest("div");
+    if (element.value == "") {
+        let text = 'Please enter the second contact phone.';
+        let div = createDivErrorElement(classname, text);
+
+        if (divContainer.querySelector('#div-error') === null) {
+            element.classList.add('bg-danger');
+            divContainer.append(div);
+        }
+    } else {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+}
+
+function createDivErrorElement(classname, text) {
+    var div = document.createElement('div');
+    div.setAttribute('id', 'div-error');
+    div.className = classname;
+    div.textContent = text;
+
+    return div;
+}
+
+window.addEventListener('input', (e) => {
+    var element = e.target;
+    var divContainer = element.closest("div");
+
+    if (element.value !== "") {
+        element.classList.remove('bg-danger');
+
+        if (divContainer.querySelector('#div-error') !== null) {
+            divContainer.querySelector('#div-error').remove();
+        }
+    }
+});

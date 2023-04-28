@@ -72,7 +72,7 @@
                 <label for="second_contact_phone">2nd Contact Phone</label>
                 <input type="tel" class="form-control" id="second_contact_phone" name="second_contact_phone" placeholder="1234567890" pattern="[0-9]{10,11}" required />
             </div>
-            <input type="submit" value="Save Student" name="submitBtn" class="btn btn-success" />
+            <input type="submit" value="Save Student" name="submitBtn" class="btn btn-success" onclick="validateForm()" />
         </form>
     </div>
 </body>
