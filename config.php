@@ -3,7 +3,7 @@
 return $config = [
     'db' => [
         'dbhost'   => 'localhost',
-        'dbname'   => 'school_enrolment',
+        'dbname'   => 'majestic_enrolment',
         'dbuser'   => 'root',
         'dbpass'   => ''
     ]
