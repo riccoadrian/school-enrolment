@@ -49,4 +49,12 @@ class StudentModel
 
         return $message;
     }
+
+    public function getStudents()
+    {
+        $query = "SELECT * FROM student ORDER BY year, first_name";
+        $students = $this->db->query($query)->fetchAll();
+
+        return $students;
+    }
 }

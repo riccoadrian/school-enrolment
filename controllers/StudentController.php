@@ -31,4 +31,11 @@ class StudentController
 
         return require_once '../views/create.php';
     }
+
+    public function getStudentsAction()
+    {
+        $students = $this->model->getStudents();
+
+        return require_once '../views/students.php';
+    }
 }
