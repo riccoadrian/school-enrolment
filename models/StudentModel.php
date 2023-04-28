@@ -21,8 +21,7 @@ class StudentModel
 
             $query = "INSERT INTO student (".$columns.") VALUES(".$values.")";
             $stmt = $this->db->prepare($query);
-            $stmt->bindParam(':first_name', $params['first_name'], \PDO::PARAM_STR);
-            $stmt->bindParam(':last_name', $params['last_name'], \PDO::PARAM_STR);
+            $stmt->bindParam(':name', $params['name'], \PDO::PARAM_STR);
             $stmt->bindParam(':date_of_birth', $params['date_of_birth'], \PDO::PARAM_STR);
             $stmt->bindParam(':enrolment_date', $params['enrolment_date'], \PDO::PARAM_STR);
             $stmt->bindParam(':school_year', $params['school_year'], \PDO::PARAM_STR);
@@ -52,7 +51,7 @@ class StudentModel
 
     public function getStudents()
     {
-        $query = "SELECT * FROM student ORDER BY year, first_name";
+        $query = "SELECT * FROM student ORDER BY year, name";
         $students = $this->db->query($query)->fetchAll();
 
         return $students;

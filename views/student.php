@@ -13,8 +13,7 @@
     <div class="container">
         <div class="media d-flex m-auto mt-4 w-75">
             <div class="media-body ps-5">
-                <h5 class="mt-0"><span class="fw-bold">First Name:</span> <?php echo ucfirst($student['first_name']); ?></h5>
-                <h5><span class="fw-bold">Last Name:</span> <?php echo ucfirst($student['last_name']); ?></h5>
+                <h5 class="mt-0"><span class="fw-bold">Name:</span> <?php echo ucfirst($student['name']); ?></h5>
                 <h5><span class="fw-bold">Date of Birth:</span> <?php echo $student['date_of_birth']; ?></h5>
                 <h5><span class="fw-bold">Enrolment Date:</span> <?php echo $student['enrolment_date']; ?></h5>
                 <h5><span class="fw-bold">Current School Year:</span> <?php echo $student['school_year']; ?></h5>

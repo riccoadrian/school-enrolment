@@ -11,8 +11,7 @@ class StudentController
 
         if (isset($_POST['submitBtn'])) {
             $params = [
-                'first_name' => $_POST['first_name'],
-                'last_name' => $_POST['last_name'],
+                'name' => $_POST['name'],
                 'date_of_birth' => $_POST['date_of_birth'],
                 'enrolment_date' => $_POST['enrolment_date'],
                 'school_year' => $_POST['school_year'],

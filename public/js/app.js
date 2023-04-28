@@ -63,8 +63,8 @@ function sortTable(n) {
     }
 }
 
-function deleteStudent(id, first_name) {
-    if (confirm("Are you sure you want to delete student " + first_name + "?") == true) {
+function deleteStudent(id, name) {
+    if (confirm("Are you sure you want to delete student " + name + "?") == true) {
         $.ajax({
             url: '?action=delete&id=' + id,
             method: 'POST',
@@ -89,28 +89,10 @@ function deleteStudent(id, first_name) {
 function validateForm() {
     var classname = 'fs-5 text-danger mt-2';
 
-    var element = document.getElementById('first_name');
+    var element = document.getElementById('name');
     var divContainer = element.closest("div");
     if (element.value == "") {
-        let text = 'Please enter the first name.';
-        let div = createDivErrorElement(classname, text);
-
-        if (divContainer.querySelector('#div-error') === null) {
-            element.classList.add('bg-danger');
-            divContainer.append(div);
-        }
-    } else {
-        element.classList.remove('bg-danger');
-
-        if (divContainer.querySelector('#div-error') !== null) {
-            divContainer.querySelector('#div-error').remove();
-        }
-    }
-
-    var element = document.getElementById('last_name');
-    var divContainer = element.closest("div");
-    if (element.value == "") {
-        let text = 'Please enter the last name.';
+        let text = 'Please enter the name.';
         let div = createDivErrorElement(classname, text);
 
         if (divContainer.querySelector('#div-error') === null) {
