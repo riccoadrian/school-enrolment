@@ -185,4 +185,11 @@ class StudentController
 
         return require_once '../views/update.php';
     }
+
+    public function getSummaryAction()
+    {
+        $records = $this->model->getSummary();
+
+        return require_once '../views/report.php';
+    }
 }

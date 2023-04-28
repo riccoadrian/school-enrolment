@@ -121,4 +121,12 @@ class StudentModel
 
         return $message;
     }
+
+    public function getSummary()
+    {
+        $query = "SELECT year, COUNT(*) as no_of_students FROM student GROUP BY 1 ORDER BY 1";
+        $records = $this->db->query($query)->fetchAll();
+
+        return $records;
+    }
 }

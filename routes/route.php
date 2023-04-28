@@ -34,4 +34,8 @@ if (isset($_GET['action'])) {
     if ($request == 'update') {
         $route = "StudentController@updateStudentAction";
     }
+
+    if ($request == 'report') {
+        $route = "StudentController@getSummaryAction";
+    }
 }
