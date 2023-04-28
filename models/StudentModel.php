@@ -65,4 +65,10 @@ class StudentModel
 
         return $student;
     }
+
+    public function deleteStudent($id)
+    {
+        $query = "DELETE FROM student WHERE id={$id}";
+        $this->db->query($query);
+    }
 }

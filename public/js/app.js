@@ -62,3 +62,26 @@ function sortTable(n) {
         }
     }
 }
+
+function deleteStudent(id, first_name) {
+    if (confirm("Are you sure you want to delete student " + first_name + "?") == true) {
+        $.ajax({
+            url: '?action=delete&id=' + id,
+            method: 'POST',
+            contentType: 'application/json',
+            success: function(result) {
+                document.getElementById('rec-' + id).remove();
+
+                var divContainerSection = document.getElementsByClassName('container')[0];
+                var div = document.createElement('div');
+                div.className = 'alert alert-success';
+                div.textContent = 'Student deleted successfully!';
+                divContainerSection.prepend(div);
+
+                setTimeout(function() {
+                    window.location.reload();
+                }, 3000);
+            }
+        });
+    };
+}

@@ -49,4 +49,11 @@ class StudentController
 
         return require_once '../views/student.php';
     }
+
+    public function deleteStudentAction()
+    {
+        if (! empty($_GET['id'])) {
+            $this->model->deleteStudent($_GET['id']);
+        }
+    }
 }
