@@ -38,4 +38,15 @@ class StudentController
 
         return require_once '../views/students.php';
     }
+
+    public function getStudentAction()
+    {
+        $student = [];
+
+        if (! empty($_GET['id'])) {
+            $student = $this->model->getStudent($_GET['id']);
+        }
+
+        return require_once '../views/student.php';
+    }
 }

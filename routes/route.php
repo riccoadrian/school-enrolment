@@ -18,4 +18,8 @@ if (isset($_GET['action'])) {
     if ($request == 'studentLists') {
         $route = "StudentController@getStudentsAction";
     }
+
+    if ($request == 'viewStudent') {
+        $route = "StudentController@getStudentAction";
+    }
 }

@@ -57,4 +57,12 @@ class StudentModel
 
         return $students;
     }
+
+    public function getStudent($id)
+    {
+        $query = "SELECT * FROM student WHERE id={$id}";
+        $student = $this->db->query($query)->fetch();
+
+        return $student;
+    }
 }
