@@ -4,4 +4,4 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="./public/js/app.js"></script>
+<script type="text/javascript" src="js/app.js"></script>

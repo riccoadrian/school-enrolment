@@ -22,7 +22,7 @@
         }
     }
     ?>
-        <form method="POST" action="?action=create" enctype="multipart/form-data">
+        <form method="POST" action="/create" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="file">Select an image file to upload (JPG, JPEG, PNG) [min size: 200px x 200px]</label>
                 <input type="file" class="form-control" id="file" name="file" />

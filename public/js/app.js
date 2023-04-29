@@ -66,7 +66,7 @@ function sortTable(n) {
 function deleteStudent(id, name) {
     if (confirm("Are you sure you want to delete student " + name + "?") == true) {
         $.ajax({
-            url: '?action=delete&id=' + id,
+            url: '/delete?id=' + id,
             method: 'POST',
             contentType: 'application/json',
             success: function(result) {

@@ -22,14 +22,14 @@
         }
     }
     ?>
-        <form method="POST" action="?action=update" enctype="multipart/form-data">
+        <form method="POST" action="/update" enctype="multipart/form-data">
             <div class="form-group">
             <?php
             if (isset($student['filename'])) {
                 $filename = $student['filename'];
                 $alt = explode('.', $filename)[0];
             ?>
-                <img src="public/uploads/<?php echo $filename; ?>" class="align-self-start mr-3 rounded-circle" alt="<?php echo $alt; ?>" width="200px" height="200px"><br />
+                <img src="uploads/<?php echo $filename; ?>" class="align-self-start mr-3 rounded-circle" alt="<?php echo $alt; ?>" width="200px" height="200px"><br />
                 <br />
             <?php
             }

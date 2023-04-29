@@ -18,7 +18,7 @@
             $alt = explode('.', $filename)[0];
         ?>
             <div class="px-5">
-                <img src="public/uploads/<?php echo $filename; ?>" class="align-self-start mr-3 rounded-circle" alt="<?php echo $alt; ?>" width="200px" height="200px">
+                <img src="uploads/<?php echo $filename; ?>" class="align-self-start mr-3 rounded-circle" alt="<?php echo $alt; ?>" width="200px" height="200px">
             </div>
         <?php
         }

@@ -1,41 +1,22 @@
 <?php
 
-if (isset($_GET['action'])) {
-    $request = $_GET['action'];
+$routeList = [];
 
-    if ($request == 'dashboard') {
-        $route = "AppController@indexAction";
+class Route {
+    public static function add($routeName, $controllerAction)
+    {
+        $GLOBALS['routeList'][] = ['name' => $routeName, 'action' => $controllerAction];
     }
 
-    if ($request == 'addStudent') {
-        $route = "StudentController@createStudentAction";
-    }
+    public static function run()
+    {
+        $request = $_SERVER['REQUEST_URI'];
+        $request_route = explode('?', $request)[0];
 
-    if ($request == 'create') {
-        $route = "StudentController@createStudentAction";
-    }
-
-    if ($request == 'studentLists') {
-        $route = "StudentController@getStudentsAction";
-    }
-
-    if ($request == 'viewStudent') {
-        $route = "StudentController@getStudentAction";
-    }
-
-    if ($request == 'delete') {
-        $route = "StudentController@deleteStudentAction";
-    }
-
-    if ($request == 'editStudent') {
-        $route = "StudentController@updateStudentAction";
-    }
-
-    if ($request == 'update') {
-        $route = "StudentController@updateStudentAction";
-    }
-
-    if ($request == 'report') {
-        $route = "StudentController@getSummaryAction";
+        foreach ($GLOBALS['routeList'] as $route) {
+            if ($request_route == $route['name']) {
+                return $route['action'];
+            }
+        }
     }
 }

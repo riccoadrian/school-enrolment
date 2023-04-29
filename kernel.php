@@ -17,7 +17,7 @@ spl_autoload_register(function($class) {
     }
 });
 
-include_once __DIR__.'/routes/route.php';
+include_once __DIR__.'/routes/web.php';
 
 if (! empty($route)) {
     $routes = explode('@', $route);
